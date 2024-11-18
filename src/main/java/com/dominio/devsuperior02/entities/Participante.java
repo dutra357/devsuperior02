@@ -2,7 +2,9 @@ package com.dominio.devsuperior02.entities;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_participante")
@@ -16,11 +18,18 @@ public class Participante {
 
     private String email;
 
+    @ManyToMany(mappedBy = "atividades")
+    private final Set<Atividade> participantes = new HashSet<Atividade>();
+
     public Participante() {}
     public Participante(Long id, String nome, String email) {
         this.id = id;
         this.nome = nome;
         this.email = email;
+    }
+
+    public Set<Atividade> getParticipantes() {
+        return participantes;
     }
 
     public Long getId() {
