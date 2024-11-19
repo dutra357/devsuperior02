@@ -2,12 +2,13 @@ package com.dominio.devsuperior02.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
 @Entity
 @Table(name = "tb_bloco")
-public class Bloco {
+public class Bloco implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

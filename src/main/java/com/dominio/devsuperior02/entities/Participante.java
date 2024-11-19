@@ -2,13 +2,14 @@ package com.dominio.devsuperior02.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "tb_participante")
-public class Participante {
+public class Participante implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
